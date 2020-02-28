@@ -69,17 +69,17 @@ async def _(msg, ctx):
 
 
 # Intercept all the messages with payloads and check their payload
-@plugin.on_any_message(priority=10)
-async def _(msg, ctx):
+#@plugin.on_any_message(priority=10)
+#async def _(msg, ctx):
     # Only messages from vkontakte can have payload
-    if ctx.backend.get_identity() != "vkontakte":
-        return HandlerResponse.SKIPPED
+#    if ctx.backend.get_identity() != "vkontakte":
+#        return HandlerResponse.SKIPPED
 
-    payload = msg.raw["object"]["message"].get("payload")
+#    payload = msg.raw["object"]["message"].get("payload")
 
-    if not payload or payload != "4":
-        return HandlerResponse.SKIPPED
+#    if not payload or payload != "4":
+#        return HandlerResponse.SKIPPED
 
-    await ctx.reply(
-        "Your choice was 4 (from global interceptor)".format(payload)
-    )
+#    await ctx.reply(
+#        "Your choice was 4 (from global interceptor)".format(payload)
+#    )
