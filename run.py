@@ -1,10 +1,14 @@
 import json
-from kutana import Kutana, load_plugins
+import logging
+from kutana import Kutana, load_plugins, logger
 from kutana.backends import Vkontakte
 
 # Import configuration
 with open("config.json") as fh:
     config = json.load(fh)
+    
+# Log level
+logger.set_logger_level(logging.DEBUG)
 
 # Create application
 app = Kutana()
