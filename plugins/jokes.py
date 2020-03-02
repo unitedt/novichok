@@ -18,7 +18,7 @@ async def bg_loop(vk):
         for sub in subscribers:
             await vk.send_message(sub, joke[0])
 
-        await asyncio.sleep(random.randrange(5, 30))
+        await asyncio.sleep(random.randrange(15 * 60, 2 * 60 * 60))
 
 @plugin.on_start()
 async def _(app):
@@ -30,7 +30,7 @@ async def _(app):
 
 @plugin.on_commands(["jokes sub"])
 async def _(msg, ctx):
-    subscribers.append(msg.receiver_id)
+    subscribers.append([msg.receiver_id, ctx.body])
     await ctx.reply("OK")
 
 
