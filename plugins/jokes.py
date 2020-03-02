@@ -6,7 +6,7 @@ from kutana import Plugin
 plugin = Plugin(name="Jokes", description="Send random jokes in random time to subscribers")
 
 subscribers = []
-conn = pymysql.connect('localhost', 'root', '*', 'novichok')
+conn = pymysql.connect(host='localhost', port=3307, user='root', password='*', db='novichok')
 
 async def bg_loop(vk):
     while True:
